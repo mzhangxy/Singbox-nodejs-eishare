@@ -2,9 +2,9 @@
 set -e
 
 # ================== 端口设置 ==================
-export TUIC_PORT=${TUIC_PORT:-"56123"}
-export HY2_PORT=${HY2_PORT:-"56124"}
-export REALITY_PORT=${REALITY_PORT:-"56125"}
+export TUIC_PORT=${TUIC_PORT:-""}
+export HY2_PORT=${HY2_PORT:-"19193"}
+export REALITY_PORT=${REALITY_PORT:-"19193"}
 
 # ================== 强制切换到脚本所在目录 ==================
 cd "$(dirname "$0")"
@@ -33,11 +33,11 @@ fi
 ARCH=$(uname -m)
 BASE_URL=""
 if [[ "$ARCH" == "arm"* ]] || [[ "$ARCH" == "aarch64" ]]; then
-  BASE_URL="https://arm64.ssss.nyc.mn"
+  BASE_URL="https://arm64.31888.xyz"
 elif [[ "$ARCH" == "amd64"* ]] || [[ "$ARCH" == "x86_64" ]]; then
-  BASE_URL="https://amd64.ssss.nyc.mn"
+  BASE_URL="https://amd64.31888.xyz"
 elif [[ "$ARCH" == "s390x" ]]; then
-  BASE_URL="https://s390x.ssss.nyc.mn"
+  BASE_URL="https://s390x.31888.xyz"
 else
   echo "不支持的架构: $ARCH"
   exit 1
